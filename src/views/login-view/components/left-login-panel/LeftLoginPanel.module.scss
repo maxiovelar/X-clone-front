@@ -1,0 +1,30 @@
+@use '@/assets/colors' as *;
+
+@media (max-width: 900px) {
+	.icon-container {
+		align-items: start;
+		justify-content: start;
+	}
+
+	.icon {
+		width: 40px;
+		height: auto;
+		padding: 30px 0;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	.icon {
+		fill: $dark-gray;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	.icon {
+		fill: $light-gray;
+	}
+}
+
+:export {
+	gray: $gray;
+}

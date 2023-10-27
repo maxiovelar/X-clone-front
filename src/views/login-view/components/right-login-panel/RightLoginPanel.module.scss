@@ -1,0 +1,25 @@
+@use '@/assets/colors' as *;
+@use '@/assets/fonts' as *;
+
+@media (max-width: 425px) {
+	.login-buttons {
+		width: 100%;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	.icon {
+		fill: $dark-gray;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	.icon {
+		fill: $light-gray;
+	}
+}
+
+:export {
+	gray: $gray;
+	archivo-black: 'Archivo Black', sans-serif;
+}

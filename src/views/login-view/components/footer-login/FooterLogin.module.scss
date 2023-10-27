@@ -1,0 +1,8 @@
+@use '@/assets/colors' as *;
+@use '@/assets/fonts' as *;
+
+:export {
+	white: $white;
+	gray: $gray;
+	archivo-black: 'Archivo Black', sans-serif;
+}

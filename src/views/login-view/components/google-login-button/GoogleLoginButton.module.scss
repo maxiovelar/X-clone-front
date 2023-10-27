@@ -1,0 +1,14 @@
+@use '@/assets/colors' as *;
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 6px;
+	border-radius: 9999px;
+	border: solid 1px $light-gray;
+	text-transform: none;
+	color: $gray;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
