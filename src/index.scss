@@ -2,8 +2,9 @@
 
 :root {
 	color-scheme: light dark;
-	color: $light-gray;
-	background-color: $dark-gray;
+	color: $white;
+	background-color: $black;
+	fill: $white;
 	font-family: 'Roboto', sans-serif;
 }
 
@@ -12,9 +13,27 @@ body {
 	padding: 0;
 }
 
+.modal {
+	background-color: $black;
+	color: $white;
+	& svg {
+		fill: $white;
+	}
+}
+
 @media (prefers-color-scheme: light) {
 	:root {
-		color: $dark-gray;
+		color: $black;
 		background-color: $white;
+		fill: $black;
+	}
+
+	.modal {
+		background-color: $white;
+		color: $black;
+
+		& svg {
+			fill: $black;
+		}
 	}
 }

@@ -15,11 +15,7 @@ interface Props {
 
 export const ButtonPrimaryPill = ({ children, ...props }: Props) => {
 	return (
-		<Button
-			{...props}
-			className={cn(style['button-pill'], props.className)}
-			disableElevation
-		>
+		<Button {...props} className={cn(style['button-pill'], props.className)} disableElevation>
 			{children}
 		</Button>
 	);

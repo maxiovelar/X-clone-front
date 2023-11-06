@@ -5,14 +5,8 @@
 	flex: 1;
 }
 
-// @media (max-width: 500px)
-
-@media (max-width: 900px) {
+@media (width <= 900px) {
 	.container {
 		align-items: start;
-	}
-	.grid {
-		max-width: 550px;
-		padding: 14px;
 	}
 }

@@ -4,6 +4,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background-color: rgba($gray, 0.5);
 }
 
 .x-logo {
@@ -13,34 +14,13 @@
 	transform: translate(-50%, -50%);
 }
 
-.cta-button {
-	width: 100%;
-	text-transform: none;
-	border-radius: 9999px;
-	padding-top: 12px;
-	padding-bottom: 12px;
-}
-
 .close-button {
 	width: fit-content;
 	padding: 16px;
-
-	& svg {
-		fill: $dark-gray;
-	}
-}
-
-@media (max-width: 600px) {
-	.modal-dialog {
-		border-radius: 0px;
-	}
-	.form-container {
-		padding-left: 24px;
-		padding-right: 24px;
-	}
 }
 
 :export {
+	black: $black;
 	dark-gray: $dark-gray;
 	gray: $gray;
 	light-gray: $light-gray;

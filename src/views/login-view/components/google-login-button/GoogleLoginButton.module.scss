@@ -1,6 +1,7 @@
 @use '@/assets/colors' as *;
 
 .button {
+	background-color: $white;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -11,4 +12,8 @@
 	color: $gray;
 	padding-top: 8px;
 	padding-bottom: 8px;
+
+	&:hover {
+		background-color: darken($color: $white, $amount: 6%);
+	}
 }

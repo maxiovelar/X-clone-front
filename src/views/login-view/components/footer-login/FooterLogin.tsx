@@ -3,14 +3,17 @@ import links from '@/data/footer-links.json';
 import style from './FooterLogin.module.scss';
 
 export const FooterLogin = () => {
+	const stackMarginTop = { xs: '24px', md: '40px' };
+	const stackPadding = { xs: '16px 8px', md: '14px 12px' };
+
 	return (
 		<Stack
 			direction={'row'}
 			alignItems={'center'}
 			justifyContent={'center'}
 			flexWrap={'wrap'}
-			marginTop={{ xs: '24px', md: '40px' }}
-			padding={{ xs: '16px 8px', md: '14px 12px' }}
+			marginTop={stackMarginTop}
+			padding={stackPadding}
 		>
 			{links.map((link) => (
 				<AnchorLink

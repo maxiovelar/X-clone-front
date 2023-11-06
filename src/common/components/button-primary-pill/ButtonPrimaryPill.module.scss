@@ -1,6 +1,12 @@
+@use '@/assets/_colors.scss' as *;
 .button-pill {
+	width: 100%;
 	border-radius: 9999px;
 	padding-top: 8px;
 	padding-bottom: 8px;
 	text-transform: none;
+
+	&:disabled {
+		background-color: $gray;
+	}
 }
