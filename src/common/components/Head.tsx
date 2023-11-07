@@ -1,10 +1,10 @@
 import { Helmet } from 'react-helmet-async';
 
 interface Props {
-	title: string;
-	description: string;
-	name: string;
-	type: string;
+	readonly title: string;
+	readonly description: string;
+	readonly name: string;
+	readonly type: string;
 }
 export function Head({ title, description, name, type }: Props) {
 	return (

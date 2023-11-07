@@ -31,8 +31,8 @@ export const RegisterModal = ({ isOpen, setIsOpen }: Props) => {
 				borderRadius={{ xs: '0px', sm: '12px' }}
 				display={'flex'}
 				flexDirection={'column'}
-				justifyContent={'space-between'}
 				position={'relative'}
+				overflow={'hidden'}
 				className={'modal'}
 			>
 				<XIcon height={'30px'} width={'30px'} className={style['x-logo']} />

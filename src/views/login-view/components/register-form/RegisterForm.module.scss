@@ -1,0 +1,21 @@
+@use '@/assets/colors' as *;
+
+.register-form {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	overflow-y: scroll;
+
+	& div {
+		background-color: $white;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	.register-form {
+		& div {
+			background-color: $black;
+		}
+	}
+}

@@ -1,5 +1,5 @@
 import { TextField } from '@mui/material';
-import style from './FormInputText.module.scss';
+import style from './InputText.module.scss';
 import { Controller, type RegisterOptions, useFormContext } from 'react-hook-form';
 
 interface Props {
@@ -12,14 +12,16 @@ interface Props {
 
 type inputType = 'text' | 'email' | 'password';
 
-export const FormInputText = ({ name, label, type, autoFocus, autoComplete }: Props) => {
+export const InputText = ({ name, label, type, autoFocus, autoComplete }: Props) => {
 	const { control } = useFormContext();
 	const emailValidation = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i;
+	const blankSpaceValidation = /^[a-zA-ZÀ-ÖØ-öø-ÿ0-9_]+$/i;
 
 	const textRules: RegisterOptions = {
 		required: 'Campo requerido',
 		minLength: { value: 2, message: 'Mínimo 2 caracteres' },
 		maxLength: { value: 50, message: 'Máximo 50 caracteres' },
+		pattern: { value: blankSpaceValidation, message: 'No puedes usar espacios en blanco' },
 	};
 	const emailRules: RegisterOptions = {
 		required: 'Campo requerido',
@@ -30,6 +32,7 @@ export const FormInputText = ({ name, label, type, autoFocus, autoComplete }: Pr
 		required: 'Campo requerido',
 		minLength: { value: 8, message: 'Mínimo 8 caracteres' },
 		maxLength: { value: 50, message: 'Máximo 50 caracteres' },
+		pattern: { value: blankSpaceValidation, message: 'No puedes usar espacios en blanco' },
 	};
 
 	const setRules = (type: inputType) => {

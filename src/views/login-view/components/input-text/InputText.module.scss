@@ -1,0 +1,26 @@
+@use '@/assets/colors' as *;
+
+.input {
+	& fieldset {
+		border-color: $gray;
+	}
+
+	& label {
+		color: $gray;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	.input {
+		& input {
+			color: $white;
+		}
+		&:hover fieldset:not(:focus) {
+			border-color: $primary;
+		}
+	}
+}
+
+:export {
+	gray: $gray;
+}
