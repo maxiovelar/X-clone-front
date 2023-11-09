@@ -4,6 +4,8 @@ import { Box, Typography } from '@mui/material';
 import { ButtonPrimaryPill } from '@/common/components';
 import style from './RegisterForm.module.scss';
 import { apiConfig } from '@/api/apiConfig';
+import { ErrorMessage } from '../error-message/ErrorMessage';
+import { useState } from 'react';
 
 interface FormProps {
 	firstname: string;
@@ -11,6 +13,14 @@ interface FormProps {
 	username: string;
 	email: string;
 	password: string;
+}
+
+interface CustomError {
+	response: {
+		data: {
+			detail: string;
+		};
+	};
 }
 
 const defaultValues = {
@@ -22,6 +32,7 @@ const defaultValues = {
 };
 
 export const RegisterForm = () => {
+	const [errorMessage, setErrorMessage] = useState<string>('');
 	const methods = useForm<FormProps>({ defaultValues });
 
 	const { handleSubmit, reset } = methods;
@@ -30,11 +41,13 @@ export const RegisterForm = () => {
 		try {
 			const response = await apiConfig.post('/auth/register', data);
 			console.log(response);
+			setErrorMessage('');
+			reset();
 		} catch (error) {
-			console.log((error as Error).message);
+			console.log(error);
+			const err = error as CustomError;
+			setErrorMessage(err.response.data.detail);
 		}
-		reset();
-		console.log(data);
 	};
 
 	return (
@@ -44,6 +57,7 @@ export const RegisterForm = () => {
 					<Typography id='modal-modal-title' variant='h4' component='h2' fontWeight={'bold'} marginBottom={'12px'}>
 						Crea tu cuenta
 					</Typography>
+					<ErrorMessage>{errorMessage}</ErrorMessage>
 					<InputText name='firstname' label='Nombre' type='text' autoComplete='off' />
 					<InputText name='lastname' label='Apellido' type='text' autoComplete='off' />
 					<InputText name='username' label='Nombre de usuario' type='text' autoComplete='off' />
